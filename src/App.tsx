@@ -7,7 +7,7 @@ import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
 function App() {
   const [showInput, setShowInput] = useState(false)
   const [showButtonCreateList, setShowButtonCreateList] = useState(false)
-
+  const [showSettingList, setShowSettingList] = useState(false)
 
   
 
@@ -25,13 +25,17 @@ function App() {
       </div>
 
       <div>
-        <ol>
-          <li>иванов </li>
-          <li>петров</li>
-          <li>сидоров</li>
-          
-          
-        </ol>
+        <ul>
+
+          <li onClick={()=>{setShowSettingList(!showSettingList)}}>Иванов</li>
+
+          <div>{showSettingList ? <ul>
+             <li><span>Начало : время ---</span>  <span>Конец : время</span>  </li>
+             <li><button>начать</button> <button>закончить</button> </li>
+             </ul> : ''}
+          </div> 
+
+        </ul>
       </div>
 
       { showInput ? 
