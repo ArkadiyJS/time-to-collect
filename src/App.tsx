@@ -1,5 +1,3 @@
-
-
 import { useState } from 'react'
 import './App.css'
 import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
@@ -45,9 +43,9 @@ function App() {
       </div> 
       : ''}
      
-      {showButtonCreateList ?<div>
+      { showButtonCreateList ? <div>
         <button onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
-      </div> : ''}
+      </div> : '' }
 
     </div>
   )
