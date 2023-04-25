@@ -14,10 +14,13 @@ function App() {
 
   return (
     <div className="App">
+
       <div className='Header'>
+
         <button>Вода</button>
         <button>Соки</button>
         <button>Чипсы</button>
+        
         <ToggleSwitch label="Admin" 
         showButtonCreateList={showButtonCreateList}
         setShowButtonCreateList={setShowButtonCreateList}
