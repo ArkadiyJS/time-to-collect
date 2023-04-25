@@ -3,9 +3,12 @@ import './App.css'
 import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
 
 function App() {
+
+  // Состояния рендеров по условию
   const [showInput, setShowInput] = useState(false)
   const [showButtonCreateList, setShowButtonCreateList] = useState(false)
   const [showSettingList, setShowSettingList] = useState(false)
+  
 
   
 
