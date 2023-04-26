@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
+import InputCreateList from './components/inputCreateList/inputCreateList'
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
 
           <li onClick={()=>{setShowSettingList(!showSettingList)}}>Иванов</li>
 
-          <div>{showSettingList ? <ul>
+          <div>{ showSettingList ? <ul>
              <li><span>Начало : время ---</span>  <span>Конец : время</span>  </li>
              <li><button>начать</button> <button>закончить</button> </li>
              </ul> : ''}
@@ -42,12 +43,7 @@ function App() {
         </ul>
       </div>
 
-      { showInput ? 
-      <div>
-        <input/>
-        <button>создать</button>
-      </div> 
-      : ''}
+      { showInput ? <InputCreateList  /> :  '' }
      
       { showButtonCreateList ? <div>
         <button onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
