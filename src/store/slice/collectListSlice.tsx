@@ -9,12 +9,13 @@ interface CollectState {
     name: string;
     timeToBegin: string;
     timeToFinish: string;
+    completed:boolean;
 }[]
 }
 
 
 const initialState: CollectState = {
-  collect : [ { id:'',  name:'', timeToBegin:'',  timeToFinish:'' }]
+  collect : [ { id:'',  name:'', timeToBegin:'',  timeToFinish:'', completed:false  }]
 }
 
 export const collectSlice = createSlice({
@@ -22,6 +23,7 @@ export const collectSlice = createSlice({
   
   initialState,
   reducers: {
+    
     
   },
 })
