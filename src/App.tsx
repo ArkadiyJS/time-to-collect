@@ -2,13 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
 import InputCreateList from './components/inputCreateList/inputCreateList'
+import NameList from './components/nameList/nameList'
 
 function App() {
 
   // Состояния рендеров по условию
-  const [showInput, setShowInput] = useState(false)
-  const [showButtonCreateList, setShowButtonCreateList] = useState(false)
-  const [showSettingList, setShowSettingList] = useState(false)
+  const [showInput, setShowInput] = useState<boolean>(false)
+  const [showButtonCreateList, setShowButtonCreateList] = useState<boolean>(false)
+  const [showSettingList, setShowSettingList] = useState<boolean>(false)
   
 
   
@@ -30,17 +31,7 @@ function App() {
       </div>
 
       <div>
-        <ul>
-
-          <li onClick={()=>{setShowSettingList(!showSettingList)}}>Иванов</li>
-
-          <div>{ showSettingList ? <ul>
-             <li><span>Начало : время ---</span>  <span>Конец : время</span>  </li>
-             <li><button>начать</button> <button>закончить</button> </li>
-             </ul> : ''}
-          </div> 
-
-        </ul>
+        <NameList  showSettingList={showSettingList}  setShowSettingList={setShowSettingList} />
       </div>
 
       { showInput ? <InputCreateList  /> :  '' }
