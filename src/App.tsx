@@ -31,7 +31,11 @@ function App() {
       </div>
 
       <div>
-        <NameList  showSettingList={showSettingList}  setShowSettingList={setShowSettingList} />
+        <NameList  
+          showSettingList={showSettingList}
+          setShowSettingList={setShowSettingList}
+        
+        />
       </div>
 
       { showInput ? <InputCreateList  /> :  '' }
