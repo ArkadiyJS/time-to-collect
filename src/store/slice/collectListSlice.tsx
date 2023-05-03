@@ -23,6 +23,9 @@ export const collectSlice = createSlice({
   
   initialState,
   reducers: {
+    addDriver(state,action){
+      state.collect.push(action.payload)
+    }
 
     
   },
