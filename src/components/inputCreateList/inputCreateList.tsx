@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function InputCreateList() {
+
+const [inputValue,setInputValue] = useState('')
+
+
   return (
     <form>
 
-      <input/>
+      <input  placeholder='Введите фамилию и время'  value={inputValue} />
 
       <button>создать</button>
       
