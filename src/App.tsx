@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
 import InputCreateList from './components/inputCreateList/inputCreateList'
 import NameList from './components/nameList/nameList'
+import { useAppDispatch, useAppSelector } from './hooks/hooks'
 
 function App() {
 
@@ -11,10 +12,15 @@ function App() {
   const [showButtonCreateList, setShowButtonCreateList] = useState<boolean>(false)
   const [showSettingList, setShowSettingList] = useState<boolean>(false)
   
+  const dispatch = useAppDispatch()
+  const drivers = useAppSelector((state)=>{state.collectSlice.collect})
 
   
-
+const [driverCollect, setDriverCollect] = useState([])
   
+   useEffect(()=>{
+    setDriverCollect(drivers)
+   },[drivers])
 
   return (
     <div className="App">
@@ -32,8 +38,11 @@ function App() {
          />
       </div>
 
+
+
       <div>
         <NameList  
+          
           showSettingList={showSettingList}
           setShowSettingList={setShowSettingList}
         

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function InputCreateList() {
 
@@ -12,7 +13,7 @@ const handleSubmit = (e:any) => {
 
     const newNameList = {
       
-      id: '1',
+      id: uuidv4(),
       name:inputValue,
       timeToBegin:'',
       timeToFinish:'',
@@ -21,7 +22,7 @@ const handleSubmit = (e:any) => {
     }
 
     // callBackFunction(newNameList)
-
+      
     setInputValue('')
 
   }
