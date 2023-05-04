@@ -4,6 +4,7 @@ import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
 import InputCreateList from './components/inputCreateList/inputCreateList'
 import NameList from './components/nameList/nameList'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
+import { addDriver } from './store/slice/collectListSlice'
 
 function App() {
 
@@ -13,14 +14,22 @@ function App() {
   const [showSettingList, setShowSettingList] = useState<boolean>(false)
   
   const dispatch = useAppDispatch()
-  const drivers = useAppSelector((state)=>{state.collectSlice.collect})
 
+  // const drivers = useAppSelector((state)=>{state.collectListSlice.collect}) 
+
+  // console.log(drivers)
   
-const [driverCollect, setDriverCollect] = useState([])
+  // const [driverCollect, setDriverCollect] = useState(drivers)
   
-   useEffect(()=>{
-    setDriverCollect(drivers)
-   },[drivers])
+  //  useEffect(( )=>{
+  //   setDriverCollect(drivers)
+  //  },[driverCollect])
+
+  //  console.log(driverCollect)
+
+   const onSubmitInput = (newNameList:any)=>{
+    dispatch(addDriver(newNameList))
+   }
 
   return (
     <div className="App">
@@ -34,6 +43,7 @@ const [driverCollect, setDriverCollect] = useState([])
         <ToggleSwitch label="Admin" 
         showButtonCreateList={showButtonCreateList}
         setShowButtonCreateList={setShowButtonCreateList}
+        
          
          />
       </div>
@@ -41,6 +51,8 @@ const [driverCollect, setDriverCollect] = useState([])
 
 
       <div>
+
+
         <NameList  
           
           showSettingList={showSettingList}
@@ -49,7 +61,7 @@ const [driverCollect, setDriverCollect] = useState([])
         />
       </div>
 
-      { showInput ? <InputCreateList  /> :  '' }
+      { showInput ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      
       { showButtonCreateList ? <div>
         <button onClick={()=>{setShowInput(!showInput)}}>Создать список</button>

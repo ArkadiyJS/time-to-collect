@@ -6,7 +6,10 @@ type  PropsType = {
   setShowSettingList: Function,
   
   
+  
 }
+
+
 
 function NameList({setShowSettingList,showSettingList}:PropsType) {
   
@@ -15,7 +18,7 @@ function NameList({setShowSettingList,showSettingList}:PropsType) {
   return (
     <ul>
 
-      <li onClick={()=>{setShowSettingList(!showSettingList)}}>{driverCollect.name}</li>
+      <li onClick={()=>{setShowSettingList(!showSettingList)}}>name</li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Начало : время ---</span>  <span>Конец : время</span>  </li>

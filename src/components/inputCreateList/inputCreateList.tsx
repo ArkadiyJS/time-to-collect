@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-function InputCreateList() {
+type  PropsType = {
+  
+  onSubmitInput: Function,
+  
+  
+  
+}
+
+function InputCreateList({onSubmitInput}:PropsType) {
 
 const [inputValue,setInputValue] = useState('')
 
@@ -21,7 +29,7 @@ const handleSubmit = (e:any) => {
 
     }
 
-    // callBackFunction(newNameList)
+    onSubmitInput(newNameList)
       
     setInputValue('')
 

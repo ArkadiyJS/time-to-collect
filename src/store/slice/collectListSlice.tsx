@@ -15,11 +15,14 @@ interface CollectState {
 
 
 const initialState: CollectState = {
-  collect : [ { id:'1',  name:'1', timeToBegin:'2',  timeToFinish:'2', completed:false  },]
+  collect : [ { id:'1',  name:'1', timeToBegin:'1',  timeToFinish:'1', completed:false  },
+{ id:'2',  name:'2', timeToBegin:'2',  timeToFinish:'2', completed:false  },
+{ id:'3',  name:'3', timeToBegin:'3',  timeToFinish:'3', completed:false  },
+{ id:'4',  name:'4', timeToBegin:'4',  timeToFinish:'4', completed:false  },]
 }
 
-export const collectSlice = createSlice({
-  name: 'collects',
+export const collectListSlice = createSlice({
+  name: 'collect',
   
   initialState,
   reducers: {
@@ -31,9 +34,9 @@ export const collectSlice = createSlice({
   },
 })
 
-export const {  } = collectSlice.actions
+export const { addDriver } = collectListSlice.actions
 
 
-export const selectCount = (state: RootState) => state.counter.value
+export const selectCollect = (state: RootState) => state.collectListSlice.collect
 
-export default collectSlice.reducer
+export default collectListSlice.reducer
