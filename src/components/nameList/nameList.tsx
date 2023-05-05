@@ -15,7 +15,7 @@ type  PropsType = {
 function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 
   const [hourDigitalBegin, setHourDigitalBegin] = useState<number>(0);
-  const [secondDigitalBegin, setSecondDigitalBegin] = useState<number>(0);
+  
   const [minutesDigitalBegin, setMinutesDigitalBegin] = useState<number>(0);
 
   const giveMeTimeBegin = () => {
@@ -23,18 +23,18 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 
     const HH:number = date.getHours()
     const MM:number = date.getMinutes()
-    const SS:number = date.getSeconds()
+    
 
-    setSecondDigitalBegin(SS);
+    
     setHourDigitalBegin(HH);
     setMinutesDigitalBegin(MM);
   }
-  const begin = `${hourDigitalBegin}:${minutesDigitalBegin}:${secondDigitalBegin}`
+  const begin = `${hourDigitalBegin}:${minutesDigitalBegin}`
 
 
 
   const [hourDigitalFinish, setHourDigitalFinish] = useState<number>(0);
-  const [secondDigitalFinish, setSecondDigitalFinish] = useState<number>(0);
+  
   const [minutesDigitalFinish, setMinutesDigitalFinish] = useState<number>(0);
 
   const giveMeTimeFinish = () => {
@@ -42,13 +42,13 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 
     const HH:number = date.getHours()
     const MM:number = date.getMinutes()
-    const SS:number = date.getSeconds()
+    
 
-    setSecondDigitalFinish(SS);
+    
     setHourDigitalFinish(HH);
     setMinutesDigitalFinish(MM);
   }
-const finish = `${hourDigitalFinish}:${minutesDigitalFinish}:${secondDigitalFinish}`
+const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
 
 const [showSettingList, setShowSettingList] = useState<boolean>(false)
 
