@@ -11,25 +11,27 @@ function App() {
   // Состояния рендеров по условию
   const [showInput, setShowInput] = useState<boolean>(false)
   const [showButtonCreateList, setShowButtonCreateList] = useState<boolean>(false)
-  const [showSettingList, setShowSettingList] = useState<boolean>(false)
   
+  
+  // Функции стора
   const dispatch = useAppDispatch()
-
-  const driverss = useAppSelector((state)=>{ return state.collectListSlice.collect}) 
+  const drivers = useAppSelector((state)=>{ return state.collectListSlice.collect}) 
 
   
-  
-  const [driverCollect, setDriverCollect] = useState(driverss)
-  
-   useEffect(( )=>{
-    setDriverCollect(driverss)
-   },[driverss])
+  // заносим данные из стора в стейт и делаем подписку на изменения в сторе
+  const [driverCollect, setDriverCollect] = useState(drivers)
 
-   console.log(driverCollect)
+  useEffect(()=>{setDriverCollect(drivers)},[drivers])
 
-   const onSubmitInput = (newNameList:any)=>{
+   
+  // колл бэк функция (отправки формы в стор)
+  const onSubmitInput = (newNameList:any)=>{
     dispatch(addDriver(newNameList))
    }
+  // 
+
+
+
 
   return (
     <div className="App">
@@ -43,9 +45,7 @@ function App() {
         <ToggleSwitch label="Admin" 
         showButtonCreateList={showButtonCreateList}
         setShowButtonCreateList={setShowButtonCreateList}
-        
-         
-         />
+        />
       </div>
 
 
@@ -59,8 +59,7 @@ function App() {
         timeToFinish={d.timeToFinish}
         completed={d.completed}
          
-        showSettingList={showSettingList}
-        setShowSettingList={setShowSettingList}
+        
         
         />)}
         

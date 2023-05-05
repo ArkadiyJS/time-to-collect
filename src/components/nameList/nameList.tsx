@@ -1,25 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 type  PropsType = {
-  showSettingList: boolean,
-  setShowSettingList: Function,
+  
     id: string;
     name: string;
     timeToBegin: string;
     timeToFinish: string;
     completed:boolean;
-  
-  
-  
-  
-}
+  }
 
 
 
-function NameList({completed,timeToFinish,timeToBegin,name,id,setShowSettingList,showSettingList}:PropsType) {
-  
+function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 
+  const [hourDigitalBegin, setHourDigitalBegin] = useState<number>(0);
+  const [secondDigitalBegin, setSecondDigitalBegin] = useState<number>(0);
+  const [minutesDigitalBegin, setMinutesDigitalBegin] = useState<number>(0);
+
+  const giveMeTimeBegin = () => {
+    const date:Date = new Date();
+
+    const HH:number = date.getHours()
+    const MM:number = date.getMinutes()
+    const SS:number = date.getSeconds()
+
+    setSecondDigitalBegin(SS);
+    setHourDigitalBegin(HH);
+    setMinutesDigitalBegin(MM);
+  }
+  const begin = `${hourDigitalBegin}:${minutesDigitalBegin}:${secondDigitalBegin}`
+
+
+
+  const [hourDigitalFinish, setHourDigitalFinish] = useState<number>(0);
+  const [secondDigitalFinish, setSecondDigitalFinish] = useState<number>(0);
+  const [minutesDigitalFinish, setMinutesDigitalFinish] = useState<number>(0);
+
+  const giveMeTimeFinish = () => {
+    const date:Date = new Date();
+
+    const HH:number = date.getHours()
+    const MM:number = date.getMinutes()
+    const SS:number = date.getSeconds()
+
+    setSecondDigitalFinish(SS);
+    setHourDigitalFinish(HH);
+    setMinutesDigitalFinish(MM);
+  }
+const finish = `${hourDigitalFinish}:${minutesDigitalFinish}:${secondDigitalFinish}`
+
+const [showSettingList, setShowSettingList] = useState<boolean>(false)
 
   return (
     <ul>
@@ -27,8 +58,8 @@ function NameList({completed,timeToFinish,timeToBegin,name,id,setShowSettingList
       <li onClick={()=>{setShowSettingList(!showSettingList)}}>{name}</li>
 
         <div>{ showSettingList ? <ul>
-             <li><span>Начало : {timeToBegin} ---</span>  <span>Конец : {timeToFinish}</span>  </li>
-             <li><button>начать</button> <button>закончить</button> </li>
+             <li><span>Начало : {begin} ---</span>  <span>Конец : {finish}</span>  </li>
+             <li><button onClick={()=>giveMeTimeBegin()}>начать</button> <button onClick={()=>giveMeTimeFinish()}>закончить</button> </li>
              </ul> : ''}
         </div> 
 
