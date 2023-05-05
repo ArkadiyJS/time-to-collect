@@ -4,6 +4,12 @@ import React from 'react';
 type  PropsType = {
   showSettingList: boolean,
   setShowSettingList: Function,
+    id: string;
+    name: string;
+    timeToBegin: string;
+    timeToFinish: string;
+    completed:boolean;
+  
   
   
   
@@ -11,17 +17,17 @@ type  PropsType = {
 
 
 
-function NameList({setShowSettingList,showSettingList}:PropsType) {
+function NameList({completed,timeToFinish,timeToBegin,name,id,setShowSettingList,showSettingList}:PropsType) {
   
 
 
   return (
     <ul>
 
-      <li onClick={()=>{setShowSettingList(!showSettingList)}}>name</li>
+      <li onClick={()=>{setShowSettingList(!showSettingList)}}>{name}</li>
 
         <div>{ showSettingList ? <ul>
-             <li><span>Начало : время ---</span>  <span>Конец : время</span>  </li>
+             <li><span>Начало : {timeToBegin} ---</span>  <span>Конец : {timeToFinish}</span>  </li>
              <li><button>начать</button> <button>закончить</button> </li>
              </ul> : ''}
         </div> 

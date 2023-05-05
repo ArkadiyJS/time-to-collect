@@ -15,10 +15,7 @@ interface CollectState {
 
 
 const initialState: CollectState = {
-  collect : [ { id:'1',  name:'1', timeToBegin:'1',  timeToFinish:'1', completed:false  },
-{ id:'2',  name:'2', timeToBegin:'2',  timeToFinish:'2', completed:false  },
-{ id:'3',  name:'3', timeToBegin:'3',  timeToFinish:'3', completed:false  },
-{ id:'4',  name:'4', timeToBegin:'4',  timeToFinish:'4', completed:false  },]
+  collect : [ ]
 }
 
 export const collectListSlice = createSlice({

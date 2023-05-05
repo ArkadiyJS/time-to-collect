@@ -15,17 +15,17 @@ function App() {
   
   const dispatch = useAppDispatch()
 
-  // const drivers = useAppSelector((state)=>{state.collectListSlice.collect}) 
+  const driverss = useAppSelector((state)=>{ return state.collectListSlice.collect}) 
 
-  // console.log(drivers)
   
-  // const [driverCollect, setDriverCollect] = useState(drivers)
   
-  //  useEffect(( )=>{
-  //   setDriverCollect(drivers)
-  //  },[driverCollect])
+  const [driverCollect, setDriverCollect] = useState(driverss)
+  
+   useEffect(( )=>{
+    setDriverCollect(driverss)
+   },[driverss])
 
-  //  console.log(driverCollect)
+   console.log(driverCollect)
 
    const onSubmitInput = (newNameList:any)=>{
     dispatch(addDriver(newNameList))
@@ -52,13 +52,18 @@ function App() {
 
       <div>
 
-
-        <NameList  
-          
-          showSettingList={showSettingList}
-          setShowSettingList={setShowSettingList}
+      {driverCollect.map((d)=><NameList  key={d.id}
+        id={d.id}
+        name={d.name}
+        timeToBegin={d.timeToBegin}
+        timeToFinish={d.timeToFinish}
+        completed={d.completed}
+         
+        showSettingList={showSettingList}
+        setShowSettingList={setShowSettingList}
         
-        />
+        />)}
+        
       </div>
 
       { showInput ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
