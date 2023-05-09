@@ -29,6 +29,9 @@ function App() {
   // колл бэк функция (отправки формы в стор)
   const onSubmitInput = (newNameList:any) => {
     dispatch(addDriver(newNameList))
+
+
+
    }
   // 
 
@@ -40,9 +43,8 @@ function App() {
 
       <div className='Header'>
 
-        <button>Вода</button>
-        <button>Соки</button>
-        <button>Чипсы</button>
+       
+       
         
         <ToggleSwitch label="Admin" 
         showButtonCreateList={showButtonCreateList}
@@ -52,20 +54,16 @@ function App() {
 
 
 
-      <div>
+     
 
-      {driverCollect.map((d)=><NameList  key={d.id}
-        id={d.id}
-        name={d.name}
-        timeToBegin={d.timeToBegin}
-        timeToFinish={d.timeToFinish}
-        completed={d.completed}
-         
-        
-        
-        />)}
-        
-      </div>
+        <div>{driverCollect.map((d)=><NameList  key={d.id}
+          id={d.id}
+          name={d.name}
+          timeToBegin={d.timeToBegin}
+          timeToFinish={d.timeToFinish}
+          completed={d.completed}
+            />)}
+        </div>
 
       { (showButtonCreateList && showInput) ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      

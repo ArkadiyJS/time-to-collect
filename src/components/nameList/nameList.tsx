@@ -52,6 +52,10 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
   }
 const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
 
+ const sumHour = (  hourDigitalFinish - hourDigitalBegin)
+ const sumMin = ( minutesDigitalFinish - minutesDigitalBegin )
+ const sumTimeToCollect = `${sumHour}ч. ${sumMin}м.`
+
 const [showSettingList, setShowSettingList] = useState<boolean>(false)
 
   return (
@@ -60,7 +64,7 @@ const [showSettingList, setShowSettingList] = useState<boolean>(false)
       <li onClick={()=>{setShowSettingList(!showSettingList)}}>{name}  Н:{begin} К:{finish}</li>
 
         <div>{ showSettingList ? <ul>
-             <li><span>Начало : {begin} ---</span>  <span>Конец : {finish}</span>  </li>
+             <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
              <li><button disabled={hourDigitalBegin !== 0} onClick={()=>giveMeTimeBegin()}>начать</button> <button disabled={hourDigitalFinish !== 0} onClick={()=>giveMeTimeFinish()}>закончить</button> </li>
              </ul> : ''}
         </div> 
