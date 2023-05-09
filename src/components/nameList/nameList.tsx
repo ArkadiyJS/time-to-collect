@@ -28,6 +28,8 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     
     setHourDigitalBegin(HH);
     setMinutesDigitalBegin(MM);
+
+    
   }
   const begin = `${hourDigitalBegin}:${minutesDigitalBegin}`
 

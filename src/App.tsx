@@ -67,7 +67,7 @@ function App() {
         
       </div>
 
-      { showInput ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
+      { (showButtonCreateList && showInput) ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      
       { showButtonCreateList ? <div>
         <button onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
