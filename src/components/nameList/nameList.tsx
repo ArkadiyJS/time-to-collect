@@ -14,29 +14,28 @@ type  PropsType = {
 
 function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 
+//  состояние рендера по условию 
+  const [showSettingList, setShowSettingList] = useState<boolean>(false)
+
+
   const [hourDigitalBegin, setHourDigitalBegin] = useState<number>(0);
-  
   const [minutesDigitalBegin, setMinutesDigitalBegin] = useState<number>(0);
 
   const giveMeTimeBegin = () => {
+
     const date:Date = new Date();
 
     const HH:number = date.getHours()
     const MM:number = date.getMinutes()
     
-
-    
     setHourDigitalBegin(HH);
     setMinutesDigitalBegin(MM);
-
-    
   }
+
+  // константа время начало сборки часы : минуты
   const begin = `${hourDigitalBegin}:${minutesDigitalBegin}`
 
-
-
   const [hourDigitalFinish, setHourDigitalFinish] = useState<number>(0);
-  
   const [minutesDigitalFinish, setMinutesDigitalFinish] = useState<number>(0);
 
   const giveMeTimeFinish = () => {
@@ -45,18 +44,19 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     const HH:number = date.getHours()
     const MM:number = date.getMinutes()
     
-
-    
     setHourDigitalFinish(HH);
     setMinutesDigitalFinish(MM);
   }
+  // константа время завершения  сборки часы : минуты
 const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
 
+// вычесляем сколько времени ушло на сборку
  const sumHour = (  hourDigitalFinish - hourDigitalBegin)
  const sumMin = ( minutesDigitalFinish - minutesDigitalBegin )
  const sumTimeToCollect = `${sumHour}ч. ${sumMin}м.`
+//  
 
-const [showSettingList, setShowSettingList] = useState<boolean>(false)
+
 
   return (
     <ul>
