@@ -61,7 +61,7 @@ const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
   return (
     <ul className='nameList'>
 
-      <li onClick={()=>{setShowSettingList(!showSettingList)}}>{name} --- <span>Н:{begin} К:{finish}</span></li>
+      <li onClick={()=>{setShowSettingList(!showSettingList)}}>{name}---<span>Н:{begin} К:{finish}</span></li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>

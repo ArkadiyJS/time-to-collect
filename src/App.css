@@ -12,9 +12,9 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  row-gap: 24px;
-  width: 450px;
-  height: 800px;
+  row-gap: 3px;
+  width: 360px;
+  height: 740px;
 
   color: aliceblue;
 }
@@ -29,12 +29,7 @@
 
 
 
-body {
-  display: flex;
-  justify-content: center;
-  padding: 24px 24px 0;
 
-}
 
 input {
   flex: 1;
@@ -46,7 +41,7 @@ input {
   color: aliceblue;
 }
 
-button {
+.btnCreate {
   width: 30%;
   height: 40px;
   background-color: #f05d22;
@@ -84,8 +79,13 @@ li {
 }
 
 .btnCreateList {
-  margin-top: -10px;
+
   width: 100%;
+  height: 40px;
+  background-color: #f05d22;
+  font: 1.1em sans-serif;
+  color: black;
+  cursor: pointer;
 
 }
 

@@ -48,7 +48,7 @@ const handleSubmit = (e:any) => {
         
         />
 
-      <button type='submit'
+      <button className='btnCreate' type='submit'
        disabled={ inputValue === '' }
        
        >создать</button>
