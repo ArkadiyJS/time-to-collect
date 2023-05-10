@@ -41,16 +41,14 @@ function App() {
   return (
     <div className="App">
 
-      <div className='Header'>
+      <span className='Header'>
 
-       
-       
-        
-        <ToggleSwitch label="Admin" 
+       <h1>Time to collect</h1>
+        <ToggleSwitch label="Режим админа" 
         showButtonCreateList={showButtonCreateList}
         setShowButtonCreateList={setShowButtonCreateList}
         />
-      </div>
+      </span>
 
 
 
@@ -68,7 +66,7 @@ function App() {
       { (showButtonCreateList && showInput) ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      
       { showButtonCreateList ? <div>
-        <button onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
+        <button className='btnCreateList' onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
       </div> : '' }
 
     </div>
