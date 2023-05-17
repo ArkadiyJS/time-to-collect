@@ -21,6 +21,7 @@ function App() {
 
   
   // заносим данные из стора в стейт и делаем подписку на изменения в сторе
+  
   const [driverCollect, setDriverCollect] = useState(drivers)
 
   useEffect(()=>{setDriverCollect(drivers)},[drivers])
@@ -29,11 +30,8 @@ function App() {
   // колл бэк функция (отправки формы в стор)
   const onSubmitInput = (newNameList:any) => {
     dispatch(addDriver(newNameList))
-
-
-
-   }
-  // 
+  }
+  
 
 
 
