@@ -1,6 +1,14 @@
 import s from './toggleSwitch.module.css'
 
-function ToggleSwitch({label,setShowButtonCreateList,showButtonCreateList}) {
+type  PropsType = {
+  
+    label:string ,
+    setShowButtonCreateList:Function,
+    showButtonCreateList:boolean
+
+  }
+
+function ToggleSwitch({label,setShowButtonCreateList,showButtonCreateList}:PropsType) {
   return (
     <div className={s.container}>
     {" "} 
