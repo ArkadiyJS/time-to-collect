@@ -65,7 +65,7 @@ const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
-             <li><button disabled={hourDigitalBegin !== 0} onClick={()=>giveMeTimeBegin()}>начать</button> <button disabled={hourDigitalFinish !== 0}   onClick={()=>giveMeTimeFinish()}>закончить</button> </li>
+             <li><button className='btnUse' disabled={hourDigitalBegin !== 0} onClick={()=>giveMeTimeBegin()}>начать</button> <button className='btnUse' disabled={hourDigitalFinish !== 0}   onClick={()=>giveMeTimeFinish()}>закончить</button> </li>
              </ul> : ''}
         </div> 
 
