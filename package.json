@@ -2,13 +2,13 @@
   "name": "time-to-collect",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ArkadiyJS.github.io/time-to-collect",
+  
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
