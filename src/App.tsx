@@ -5,6 +5,7 @@ import InputCreateList from './components/inputCreateList/inputCreateList'
 import NameList from './components/nameList/nameList'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
 import { addDriver } from './store/slice/collectListSlice'
+import AuthPage from './components/authPage/authPage'
 
 function App() {
 
@@ -39,7 +40,9 @@ function App() {
   return (
     <div className="App">
 
-      <span className='Header'>
+      <AuthPage />
+
+      {/* <span className='Header'>
 
        <h1>Time to collect</h1>
         <ToggleSwitch label="Режим админа" 
@@ -65,7 +68,7 @@ function App() {
      
       { showButtonCreateList ? <div>
         <button className='btnCreateList' onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
-      </div> : '' }
+      </div> : '' } */}
 
     </div>
   )

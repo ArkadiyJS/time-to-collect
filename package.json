@@ -2,20 +2,11 @@
   "name": "time-to-collect",
   "private": true,
   "version": "0.0.0",
-<<<<<<< HEAD
-=======
-  
->>>>>>> 1e1d501 (1)
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-<<<<<<< HEAD
     "preview": "vite preview"
-=======
-    "preview": "vite preview",
-    
->>>>>>> 1e1d501 (1)
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -24,12 +15,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
+    "sass": "^1.63.4",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }

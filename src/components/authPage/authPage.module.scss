@@ -1,0 +1,22 @@
+input {
+  border: 0;
+  font: inherit;
+}
+.form {
+
+  &__field {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    outline: 0;
+    padding: .5rem 1rem;
+
+    &[type="email"],
+    &[type="password"] {
+      width: 100%;
+    }
+
+  }
+
+}
