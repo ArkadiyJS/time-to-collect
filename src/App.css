@@ -51,15 +51,6 @@ input {
 
 }
 
-.btnUse {
-  width: 30%;
-  height: 30px;
-  background-color: #f05d22;
-  font: 1em sans-serif;
-  color: black;
-  cursor: pointer;
-}
-
 ul {
   list-style-type: none;
   cursor: pointer;
@@ -101,4 +92,13 @@ li {
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.btnUse {
+  width: 30%;
+  height: 30px;
+  background-color: #f05d22;
+  font: 1em sans-serif;
+  color: black;
+  cursor: pointer;
 }
