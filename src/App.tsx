@@ -40,9 +40,9 @@ function App() {
   return (
     <div className="App">
 
-      <AuthPage />
+      
 
-      {/* <span className='Header'>
+       <span className='Header'>
 
        <h1>Time to collect</h1>
         <ToggleSwitch label="Режим админа" 
@@ -55,20 +55,25 @@ function App() {
 
      
 
-        <div>{driverCollect.map((d)=><NameList  key={d.id}
+        <div>
+          
+          {driverCollect.map((d)=><NameList  key={d.id}
           id={d.id}
           name={d.name}
           timeToBegin={d.timeToBegin}
           timeToFinish={d.timeToFinish}
           completed={d.completed}
             />)}
+
+            {/* <AuthPage /> */}
+            
         </div>
 
       { (showButtonCreateList && showInput) ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      
       { showButtonCreateList ? <div>
         <button className='btnCreateList' onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
-      </div> : '' } */}
+      </div> : '' } 
 
     </div>
   )

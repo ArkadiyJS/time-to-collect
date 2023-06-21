@@ -1,22 +1,9 @@
-input {
-  border: 0;
-  font: inherit;
+.form input {
+  margin-bottom: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1.5px solid rgb(56, 45, 171);
+  
 }
-.form {
 
-  &__field {
-    margin-bottom: 1rem;
-  }
 
-  input {
-    outline: 0;
-    padding: .5rem 1rem;
-
-    &[type="email"],
-    &[type="password"] {
-      width: 100%;
-    }
-
-  }
-
-}
