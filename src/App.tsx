@@ -65,7 +65,7 @@ function App() {
           completed={d.completed}
             />)}
 
-            {/* <AuthPage /> */}
+            <AuthPage />
             
         </div>
 
