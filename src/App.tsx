@@ -74,7 +74,10 @@ function App() {
       { showButtonCreateList ? <div>
         <button className='btnCreateList' onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
       </div> : '' } 
-
+{/* добавить счётчик машин */}
+<div>
+{drivers.length + 1 }
+</div>
     </div>
   )
 }
