@@ -65,19 +65,21 @@ function App() {
           completed={d.completed}
             />)}
 
-            <AuthPage />
+            {/* <AuthPage /> */}
             
         </div>
+        
+        <p>
+          Всего водителей: {drivers.length }
+        </p>
 
       { (showButtonCreateList && showInput) ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      
       { showButtonCreateList ? <div>
         <button className='btnCreateList' onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
       </div> : '' } 
-{/* добавить счётчик машин */}
-<div>
-{drivers.length + 1 }
-</div>
+
+
     </div>
   )
 }
