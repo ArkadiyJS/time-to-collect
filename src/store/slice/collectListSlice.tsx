@@ -25,13 +25,16 @@ export const collectListSlice = createSlice({
   reducers: {
     addDriver(state,action){
       state.collect.push(action.payload)
+    },
+    upDateTimeToBegin(state,action){
+      state.collect.find((t)=> t.id === action.id ? t.timeToBegin = action.value : '' )
     }
 
     
   },
 })
 
-export const { addDriver } = collectListSlice.actions
+export const { addDriver,upDateTimeToBegin } = collectListSlice.actions
 
 
 export const selectCollect = (state: RootState) => state.collectListSlice.collect

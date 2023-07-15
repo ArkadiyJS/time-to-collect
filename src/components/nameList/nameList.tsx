@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useAppDispatch } from '../../hooks/hooks';
+import { upDateTimeToBegin } from '../../store/slice/collectListSlice'
 
 
 type  PropsType = {
@@ -13,6 +15,10 @@ type  PropsType = {
 
 
 function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
+
+
+  const dispatch = useAppDispatch();
+
 
 //  состояние рендера по условию 
   const [showSettingList, setShowSettingList] = useState<boolean>(false)
@@ -46,6 +52,9 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     
     setHourDigitalFinish(HH);
     setMinutesDigitalFinish(MM);
+    
+
+    
   }
   // константа время завершения  сборки часы : минуты
 const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
@@ -56,16 +65,20 @@ const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
  const sumTimeToCollect = `${sumHour}ч. ${sumMin}м.`
 //  
 
+ const upDateStor =(id,begin) =>{
+  const upDate = {id:id,value:begin}
 
+  dispatch(upDateTimeToBegin(upDate))
+}
 
   return (
     <ul className='nameList'>
 
-      <li onClick={()=>{setShowSettingList(!showSettingList)}}>{name}---<span>Н:{begin} К:{finish}</span></li>
+      <li onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span>Н:{begin} К:{finish}</span></li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
-             <li><button className='btnUse' disabled={hourDigitalBegin !== 0} onClick={()=>giveMeTimeBegin()}>начать</button> <button className='btnUse' disabled={hourDigitalFinish !== 0}   onClick={()=>giveMeTimeFinish()}>закончить</button> </li>
+             <li><button className='btnUse' disabled={hourDigitalBegin !== 0} onClick={()=>{giveMeTimeBegin(),setTimeout(upDateStor(id,begin),1000)}}>начать</button> <button className='btnUse' disabled={hourDigitalFinish !== 0}   onClick={()=>giveMeTimeFinish()}>закончить</button> </li>
              </ul> : ''}
         </div> 
 
