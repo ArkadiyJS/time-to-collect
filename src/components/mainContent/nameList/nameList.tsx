@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../hooks/hooks';
-import { upDateTimeToBegin } from '../../store/slice/collectListSlice'
+import { useAppDispatch } from '../../../hooks/hooks';
+import { upDateTimeToBegin } from '../../../store/slice/collectListSlice'
 
 
 type  PropsType = {

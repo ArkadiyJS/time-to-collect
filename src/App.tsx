@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import ToggleSwitch from './components/toggleSwitch/toggleSwitch'
+import ToggleSwitch from './components/header/toggleSwitch/toggleSwitch'
 import InputCreateList from './components/inputCreateList/inputCreateList'
-import NameList from './components/nameList/nameList'
+import NameList from './components/mainContent/nameList/nameList'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
 import { addDriver } from './store/slice/collectListSlice'
 import AuthPage from './components/authPage/authPage'
+import { BrowserRouter } from 'react-router-dom'
+import Header from './components/header/header'
 
 function App() {
 
@@ -38,18 +40,12 @@ function App() {
 
 
   return (
+    <BrowserRouter>
     <div className="App">
 
       
 
-       <span className='Header'>
-
-       <h1>Time to collect</h1>
-        <ToggleSwitch label="Режим админа" 
-        showButtonCreateList={showButtonCreateList}
-        setShowButtonCreateList={setShowButtonCreateList}
-        />
-      </span>
+       <Header showButtonCreateList={showButtonCreateList} setShowButtonCreateList={setShowButtonCreateList}/>
 
 
 
@@ -65,22 +61,27 @@ function App() {
           completed={d.completed}
             />)}
 
-            {/* <AuthPage /> */}
             
+
+            <p>
+          Всего водителей: {drivers.length }
+           </p>
         </div>
         
-        <p>
-          Всего водителей: {drivers.length }
-        </p>
-
+        
       { (showButtonCreateList && showInput) ? <InputCreateList onSubmitInput={onSubmitInput} /> :  '' }
      
       { showButtonCreateList ? <div>
         <button className='btnCreateList' onClick={()=>{setShowInput(!showInput)}}>Создать список</button>
       </div> : '' } 
 
+      
+      
+
+
 
     </div>
+    </BrowserRouter>
   )
 }
 
