@@ -9,22 +9,12 @@
 
 .App {
   background-color: #181820;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  row-gap: 3px;
-  width: 360px;
-  height: 740px;
-
-  color: aliceblue;
-}
-
-.Header {
   display: grid;
-  grid-template-columns: 80% 1fr;
-  justify-items: center;
-  margin-top: 10px;
+  color: aliceblue;
+
 }
+
+.Header {}
 
 
 
