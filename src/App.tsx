@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './App.scss'
 import ToggleSwitch from './components/header/toggleSwitch/toggleSwitch'
 import InputCreateList from './components/inputCreateList/inputCreateList'
 import NameList from './components/mainContent/nameList/nameList'
