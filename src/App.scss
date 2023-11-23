@@ -11,7 +11,10 @@
   background-color: #181820;
   display: grid;
   color: aliceblue;
-  
+  width: 1200px;
+  margin: auto;
+  row-gap: 5px;
+  padding-top: 10px;
   @media (max-width: 1400px) {
       
   
@@ -29,7 +32,9 @@
 
 }
 
-.Header {}
+.Header {
+  margin: auto;
+}
 
 
 
