@@ -11,22 +11,18 @@
   background-color: #181820;
   display: grid;
   color: aliceblue;
-  width: 100%;
   margin: auto;
   row-gap: 5px;
   padding-top: 10px;
-  @media (max-width: 1400px) {
-      
   
+  
+    @media (max-width: 2000px) {
+      
+      width: 1200px;
     }
   
-    @media (max-width: 1050px) {
-      
-  
-    }
-  
-    @media (max-width: 730px) {
-      
+    @media (max-width: 1200px) {
+      width:100%;
   
     }
 
@@ -54,10 +50,12 @@ input {
 .btnCreate {
   width: 30%;
   height: 40px;
+  
   background-color: #f05d22;
   font: 1.1em sans-serif;
   color: black;
   cursor: pointer;
+  
 
 }
 
@@ -70,6 +68,7 @@ ul {
 
 li {
   padding-top: 5px;
+  
 }
 
 .nameList {
@@ -105,9 +104,10 @@ button:disabled {
 }
 
 .btnUse {
-  width: 30%;
+  width: 200px;
   height: 30px;
   background-color: #f05d22;
+  margin-left: 5px;
   font: 1em sans-serif;
   color: black;
   cursor: pointer;
@@ -116,4 +116,9 @@ button:disabled {
     font-size: small;
 
   }
+    @media (max-width: 465px) {
+  
+      width: 45%;
+  
+    }
 }
