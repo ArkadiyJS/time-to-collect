@@ -27,7 +27,7 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
   const [hourDigitalBegin, setHourDigitalBegin] = useState<number>(0);
   const [minutesDigitalBegin, setMinutesDigitalBegin] = useState<number>(0);
 
-  const giveMeTimeBegin = () => {
+  const giveMeTimeBegin = (id) => {
 
     const date:Date = new Date();
 
@@ -36,10 +36,15 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     
     setHourDigitalBegin(HH);
     setMinutesDigitalBegin(MM);
+
+      const begins =`${HH}ч:${MM}м`
+    upDateStor(id,begins)
+
+
   }
 
   // константа время начало сборки часы : минуты
-  const begin = `${hourDigitalBegin}:${minutesDigitalBegin}`
+  const begin = `${hourDigitalBegin}ч:${minutesDigitalBegin}м`
 
   const [hourDigitalFinish, setHourDigitalFinish] = useState<number>(0);
   const [minutesDigitalFinish, setMinutesDigitalFinish] = useState<number>(0);
@@ -57,7 +62,7 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     
   }
   // константа время завершения  сборки часы : минуты
-const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
+const finish = `${hourDigitalFinish}ч:${minutesDigitalFinish}м`
 
 // вычесляем сколько времени ушло на сборку
  const sumHour = (  hourDigitalFinish - hourDigitalBegin)
@@ -67,14 +72,13 @@ const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
 
  const upDateStor =(id,begin) =>{
   const upDate = {id:id,value:begin}
-
   dispatch(upDateTimeToBegin(upDate))
 }
 
   return (
     <ul className='nameList'>
 
-      <li onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span>Н:{begin} К:{finish}</span></li>
+      <li onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span>Начало:{begin} Конец:{finish}</span></li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
@@ -82,13 +86,13 @@ const finish = `${hourDigitalFinish}:${minutesDigitalFinish}`
                 <button 
                 className='btnUse'
                 disabled={hourDigitalBegin !== 0}
-                onClick={()=>{giveMeTimeBegin(),setTimeout(upDateStor(id,begin),1000)
+                onClick={()=>{giveMeTimeBegin(id)
                 }}> начать
                 </button>
                 
                 <button className='btnUse'
                 disabled={hourDigitalFinish !== 0}
-                onClick={()=>giveMeTimeFinish()}> закончить
+                onClick={()=>giveMeTimeFinish(id)}> закончить
                 </button>
                  
               </li>

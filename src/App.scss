@@ -30,6 +30,20 @@
 
 .Header {
   margin: auto;
+  
+}
+.Header__container{
+  display: flex;
+  justify-content: space-around;
+  align-items:center ;
+  
+
+}
+.history{
+  padding-top: 5%;
+  cursor: pointer;
+  color: #f05d22;
+
 }
 
 

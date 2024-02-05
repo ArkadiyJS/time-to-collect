@@ -10,7 +10,7 @@ type  PropsType = {
 
 function ToggleSwitch({label,setShowButtonCreateList,showButtonCreateList}:PropsType) {
   return (
-    <div className={s.container}>
+    <span >
     {" "} 
     <div className={s.toggleSwitch}>
         <input onClick={()=>{setShowButtonCreateList(!showButtonCreateList)}}
@@ -21,7 +21,7 @@ function ToggleSwitch({label,setShowButtonCreateList,showButtonCreateList}:Props
           <span className={s.switch} />
         </label>
       </div>
-    </div>
+    </span>
   );
 }
 

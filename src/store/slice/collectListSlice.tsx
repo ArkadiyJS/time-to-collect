@@ -27,7 +27,7 @@ export const collectListSlice = createSlice({
       state.collect.push(action.payload)
     },
     upDateTimeToBegin(state,action){
-      state.collect.find((t)=> t.id === action.id ? t.timeToBegin = action.value : '' )
+      state.collect.find((t)=> t.id === action.payload.id ? t.timeToBegin = action.payload.value : '' )
     }
 
     

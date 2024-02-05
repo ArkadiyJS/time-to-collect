@@ -22,7 +22,7 @@ function App() {
   const dispatch = useAppDispatch()
   const drivers = useAppSelector((state)=>{ return state.collectListSlice.collect}) 
 
-  
+  console.log(drivers)
   // заносим данные из стора в стейт и делаем подписку на изменения в сторе
   
   const [driverCollect, setDriverCollect] = useState(drivers)
