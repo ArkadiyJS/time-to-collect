@@ -84,10 +84,11 @@ const upDateStorFinish =(id,finish) =>{
   dispatch(upDateTimeToFinish(upDateFinish))
 }
 
+
   return (
     <ul className='nameList'>
 
-      <li onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span>Начало:{begin} Конец:{finish}</span></li>
+      <li style={ (finish === `0ч:0м`) ? {color:'red'} : {color:'green'} }  onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span >Начало:{begin} Конец:{finish}</span></li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
