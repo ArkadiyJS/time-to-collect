@@ -28,13 +28,16 @@ export const collectListSlice = createSlice({
     },
     upDateTimeToBegin(state,action){
       state.collect.find((t)=> t.id === action.payload.id ? t.timeToBegin = action.payload.value : '' )
-    }
+    },
+    upDateTimeToFinish(state,action){
+      state.collect.find((t)=> t.id === action.payload.id ? t.timeToFinish = action.payload.value : '' )
+    },
 
     
   },
 })
 
-export const { addDriver,upDateTimeToBegin } = collectListSlice.actions
+export const { addDriver,upDateTimeToBegin,upDateTimeToFinish} = collectListSlice.actions
 
 
 export const selectCollect = (state: RootState) => state.collectListSlice.collect

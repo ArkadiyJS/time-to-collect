@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from '../../../hooks/hooks';
 import { upDateTimeToBegin } from '../../../store/slice/collectListSlice'
+import { upDateTimeToFinish } from '../../../store/slice/collectListSlice'
 
 
 type  PropsType = {
@@ -49,7 +50,7 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
   const [hourDigitalFinish, setHourDigitalFinish] = useState<number>(0);
   const [minutesDigitalFinish, setMinutesDigitalFinish] = useState<number>(0);
 
-  const giveMeTimeFinish = () => {
+  const giveMeTimeFinish = (id) => {
     const date:Date = new Date();
 
     const HH:number = date.getHours()
@@ -58,6 +59,9 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     setHourDigitalFinish(HH);
     setMinutesDigitalFinish(MM);
     
+    const finishs =`${HH}ч:${MM}м`
+    upDateStorFinish(id,finishs)
+
 
     
   }
@@ -73,6 +77,11 @@ const finish = `${hourDigitalFinish}ч:${minutesDigitalFinish}м`
  const upDateStor =(id,begin) =>{
   const upDate = {id:id,value:begin}
   dispatch(upDateTimeToBegin(upDate))
+}
+
+const upDateStorFinish =(id,finish) =>{
+  const upDateFinish = {id:id,value:finish}
+  dispatch(upDateTimeToFinish(upDateFinish))
 }
 
   return (
