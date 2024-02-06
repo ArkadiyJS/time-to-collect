@@ -30,7 +30,8 @@ export const collectListSlice = createSlice({
       state.collect.find((t)=> t.id === action.payload.id ? t.timeToBegin = action.payload.value : '' )
     },
     upDateTimeToFinish(state,action){
-      state.collect.find((t)=> t.id === action.payload.id ? t.timeToFinish = action.payload.value : '' )
+      state.collect.find((t)=> t.id === action.payload.id ? t.timeToFinish = action.payload.value : '' ),
+      state.collect.find((t)=>t.id === action.payload.id ? t.completed = true : '')
     },
 
     

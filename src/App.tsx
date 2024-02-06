@@ -8,6 +8,7 @@ import { addDriver } from './store/slice/collectListSlice'
 import AuthPage from './components/authPage/authPage'
 import { BrowserRouter } from 'react-router-dom'
 import Header from './components/header/header'
+import NotificationPage from './components/mainContent/notificationPage/notificationPage'
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
 
 
     // что в сторе?
-  // console.log(drivers) 
+  console.log(drivers) 
 
 
   // заносим данные из стора в стейт и делаем подписку на изменения в сторе
@@ -54,9 +55,10 @@ function App() {
 
 
 
-     
+
 
         <div>
+          {/* <NotificationPage driverCollect={driverCollect}  /> */}
           
           {driverCollect.map((d)=><NameList  key={d.id}
           id={d.id}
