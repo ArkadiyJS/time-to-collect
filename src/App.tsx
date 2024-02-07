@@ -28,7 +28,7 @@ function App() {
 
 
     // что в сторе?
-  console.log(drivers) 
+  // console.log(drivers) 
 
 
   // заносим данные из стора в стейт и делаем подписку на изменения в сторе

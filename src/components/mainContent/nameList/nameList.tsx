@@ -20,6 +20,9 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 
   const dispatch = useAppDispatch();
 
+  const timeToBeginSplit = timeToBegin.split(':')
+  const timeToFinishSplit =timeToFinish.split(':')
+
 
 //  состояние рендера по условию 
   const [showSettingList, setShowSettingList] = useState<boolean>(false)
@@ -38,7 +41,7 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     setHourDigitalBegin(HH);
     setMinutesDigitalBegin(MM);
 
-      const begins =`${HH}ч:${MM}м`
+      const begins =`${HH}:${MM}`
     upDateStor(id,begins)
 
 
@@ -59,7 +62,7 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
     setHourDigitalFinish(HH);
     setMinutesDigitalFinish(MM);
     
-    const finishs =`${HH}ч:${MM}м`
+    const finishs =`${HH}:${MM}`
     upDateStorFinish(id,finishs)
 
 
@@ -69,8 +72,8 @@ function NameList({completed,timeToFinish,timeToBegin,name,id}:PropsType) {
 const finish = `${hourDigitalFinish}ч:${minutesDigitalFinish}м`
 
 // вычесляем сколько времени ушло на сборку
- const sumHour = (  hourDigitalFinish - hourDigitalBegin)
- const sumMin = ( minutesDigitalFinish - minutesDigitalBegin )
+ const sumHour = (  timeToFinishSplit[0] - timeToBeginSplit[0])
+ const sumMin = ( timeToFinishSplit[1] - timeToBeginSplit[1]  )
  const sumTimeToCollect = `${sumHour}ч. ${sumMin}м.`
 //  
 
@@ -88,10 +91,12 @@ const upDateStorFinish =(id,finish) =>{
   return (
     <ul className='nameList'>
 
-      <li style={ (completed === false) ? {color:'red'} : {color:'green'} }  onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span >Начало:{timeToBegin} Конец:{timeToFinish}</span></li>
+      <li style={ (completed === false) ? {color:'red'} : {color:'green'} }  onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span >Начало:{timeToBeginSplit[0] }ч{timeToBeginSplit[1]}м Конец:{timeToFinishSplit[0] }ч{timeToFinishSplit[1]}м</span></li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
+             
+             
              <li>
                 <button 
                 className='btnUse'
@@ -108,7 +113,7 @@ const upDateStorFinish =(id,finish) =>{
               </li>
              </ul> : ''}
         </div> 
-        
+
 
     </ul>
   );
