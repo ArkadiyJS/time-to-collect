@@ -86,8 +86,8 @@ const upDateStorFinish =(id,finish) =>{
   const upDateFinish = {id:id,value:finish}
   dispatch(upDateTimeToFinish(upDateFinish))
 }
-
-
+console.log(timeToFinish)
+console.log(timeToBegin)
   return (
     <ul className='nameList'>
 
@@ -106,7 +106,7 @@ const upDateStorFinish =(id,finish) =>{
                 </button>
                 
                 <button className='btnUse'
-                disabled={timeToFinish.length > 2}
+                disabled={(timeToFinish.length > 2) || (timeToBegin.length == 0)}
                 onClick={()=>giveMeTimeFinish(id)}> закончить
                 </button>
                  
