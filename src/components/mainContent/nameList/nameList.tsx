@@ -86,8 +86,7 @@ const upDateStorFinish =(id,finish) =>{
   const upDateFinish = {id:id,value:finish}
   dispatch(upDateTimeToFinish(upDateFinish))
 }
-console.log(timeToFinish)
-console.log(timeToBegin)
+
   return (
     <ul className='nameList'>
 

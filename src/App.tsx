@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react'
-import './App.scss'
-import ToggleSwitch from './components/header/toggleSwitch/toggleSwitch'
-import InputCreateList from './components/inputCreateList/inputCreateList'
-import NameList from './components/mainContent/nameList/nameList'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
 import { addDriver } from './store/slice/collectListSlice'
+
+
 import AuthPage from './components/authPage/authPage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import InputCreateList from './components/inputCreateList/inputCreateList'
 import Header from './components/header/header'
 import NotificationPage from './components/mainContent/notificationPage/notificationPage'
 import ContainerNameList from './components/mainContent/nameList/containerNameList'
+
+
+import './App.scss'
+
 
 
 function App() {
