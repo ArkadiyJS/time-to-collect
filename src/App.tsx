@@ -6,9 +6,10 @@ import NameList from './components/mainContent/nameList/nameList'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
 import { addDriver } from './store/slice/collectListSlice'
 import AuthPage from './components/authPage/authPage'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/header/header'
 import NotificationPage from './components/mainContent/notificationPage/notificationPage'
+
 
 function App() {
 
@@ -58,7 +59,12 @@ function App() {
 
 
         <div>
-          {/* <NotificationPage driverCollect={driverCollect}  /> */}
+          <Routes>
+            <Route   path='/history'   element={<NotificationPage driverCollect={driverCollect}  /> } />  
+              
+
+          </Routes>
+          
           
           {driverCollect.map((d)=><NameList  key={d.id}
           id={d.id}

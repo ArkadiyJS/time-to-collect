@@ -1,12 +1,17 @@
 import React from 'react';
 import ToggleSwitch from './toggleSwitch/toggleSwitch';
 
+import { Link } from 'react-router-dom';
+
 function Header({showButtonCreateList,setShowButtonCreateList}) {
   return (
     <span className='Header'>
 
        <h1>Time to collect</h1>
-       <div className='Header__container' > <span className='history'><h3>История</h3></span>
+       <div className='Header__container' > 
+       
+       <Link to='/history'><span className='history'><h3>История</h3></span></Link>
+       
        
        <ToggleSwitch label="Режим админа" 
         showButtonCreateList={showButtonCreateList}
