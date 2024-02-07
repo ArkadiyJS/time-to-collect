@@ -7,7 +7,8 @@ function Header({showButtonCreateList,setShowButtonCreateList}) {
   return (
     <span className='Header'>
 
-       <h1>Time to collect</h1>
+      <Link to='/'><h1>Time to collect</h1></Link>
+       
        <div className='Header__container' > 
        
        <Link to='/history'><span className='history'><h3>История</h3></span></Link>

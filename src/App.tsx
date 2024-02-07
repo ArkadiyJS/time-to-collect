@@ -9,6 +9,7 @@ import AuthPage from './components/authPage/authPage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/header/header'
 import NotificationPage from './components/mainContent/notificationPage/notificationPage'
+import ContainerNameList from './components/mainContent/nameList/containerNameList'
 
 
 function App() {
@@ -61,24 +62,17 @@ function App() {
         <div>
           <Routes>
             <Route   path='/history'   element={<NotificationPage driverCollect={driverCollect}  /> } />  
-              
+            
+            <Route path='/' element={<ContainerNameList  driverCollect={driverCollect}  />}/>
 
           </Routes>
           
           
-          {driverCollect.map((d)=><NameList  key={d.id}
-          id={d.id}
-          name={d.name}
-          timeToBegin={d.timeToBegin}
-          timeToFinish={d.timeToFinish}
-          completed={d.completed}
-            />)}
+          
 
             
 
-            <p>
-          Всего водителей: {drivers.length }
-           </p>
+              
         </div>
         
         

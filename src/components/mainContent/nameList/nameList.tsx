@@ -88,26 +88,27 @@ const upDateStorFinish =(id,finish) =>{
   return (
     <ul className='nameList'>
 
-      <li style={ (finish === `0ч:0м`) ? {color:'red'} : {color:'green'} }  onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span >Начало:{begin} Конец:{finish}</span></li>
+      <li style={ (completed === false) ? {color:'red'} : {color:'green'} }  onClick={()=>{setShowSettingList(!showSettingList) }}>{name}---<span >Начало:{timeToBegin} Конец:{timeToFinish}</span></li>
 
         <div>{ showSettingList ? <ul>
              <li><span>Длительность:{ hourDigitalFinish && sumTimeToCollect} </span>  </li>
              <li>
                 <button 
                 className='btnUse'
-                disabled={hourDigitalBegin !== 0}
+                disabled={timeToBegin.length > 2}
                 onClick={()=>{giveMeTimeBegin(id)
                 }}> начать
                 </button>
                 
                 <button className='btnUse'
-                disabled={hourDigitalFinish !== 0}
+                disabled={timeToFinish.length > 2}
                 onClick={()=>giveMeTimeFinish(id)}> закончить
                 </button>
                  
               </li>
              </ul> : ''}
         </div> 
+        
 
     </ul>
   );
