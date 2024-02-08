@@ -1,4 +1,5 @@
 import React from 'react';
+import Notifi from './notifi';
 
 
 // уведомления которые будет видить только админ
@@ -16,9 +17,12 @@ const filteredDriverCollect = driverCollect.filter(obj => { if (obj.completed ==
 
   return (
     <div>
-      {filteredDriverCollect.map((d)=><ul key={d.id} >{d.name} </ul>)}
+      
 
-
+      {filteredDriverCollect.map((d)=><Notifi key={d.id} name={d.name} />)}
+      
+      
+      
 
       <p>Водителей собрано: {filteredDriverCollect.length}</p>
     </div>
