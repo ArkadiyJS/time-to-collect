@@ -12,6 +12,7 @@ import ContainerNameList from './components/mainContent/nameList/containerNameLi
 
 
 import './App.scss'
+import RegistorPage from './components/registorPage/registorPage'
 
 
 
@@ -56,7 +57,7 @@ function App() {
 
       
 
-       <Header showButtonCreateList={showButtonCreateList} setShowButtonCreateList={setShowButtonCreateList}/>
+       {/* <Header showButtonCreateList={showButtonCreateList} setShowButtonCreateList={setShowButtonCreateList}/> */}
 
 
 
@@ -65,7 +66,7 @@ function App() {
         <div>
           <Routes>
             <Route   path='/history'   element={<NotificationPage driverCollect={driverCollect}  /> } />  
-            
+             <Route path='/registration' element={<RegistorPage/>}/>
             <Route path='/' element={<ContainerNameList  driverCollect={driverCollect}  />}/>
 
           </Routes>
