@@ -11,7 +11,7 @@ function Header({showButtonCreateList,setShowButtonCreateList}) {
        
        <div className='Header__container' > 
        
-       <Link to='/history'><span className='history'><h3>История</h3></span></Link>
+       <Link to='/history'><span className='history' onClick={()=>setShowButtonCreateList(false)}><h3 >История</h3></span></Link>
        
        
        <ToggleSwitch label="Режим админа" 
