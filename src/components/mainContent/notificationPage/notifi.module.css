@@ -1,4 +1,4 @@
-.notification{
+.notification {
     display: flex;
     height: 50px;
     width: 100%;
@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
 }
-.text{
+
+.text {
     font-size: 22px;
 }
