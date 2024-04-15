@@ -29,7 +29,7 @@ function App() {
   const dispatch = useAppDispatch()
   const drivers = useAppSelector((state)=>{ return state.collectListSlice.collect}) 
 
-
+    
 
     // что в сторе?
   // console.log(drivers) 

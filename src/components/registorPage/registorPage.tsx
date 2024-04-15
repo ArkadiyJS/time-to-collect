@@ -27,25 +27,25 @@ function RegistorPage(props) {
 
         <input type="text" required/> <i>Username</i> 
 
-      </div> 
+        </div> 
 
-      <div className={s.inputBox} >
+        <div className={s.inputBox} >
 
        <input type="password" required/> <i>Password</i> 
 
+        </div> 
+
+        {/* <div className={s.links}>  <a >Ht</a> 
+
+        </div>  */}
+
+        <div className={s.inputBox} >
+
+        <input type="submit" value="Login"/> 
+
+          </div> 
+
       </div> 
-
-      {/* <div className={s.links}>  <a >Ht</a> 
-
-      </div>  */}
-
-      <div className={s.inputBox} >
-
-       <input type="submit" value="Login"/> 
-
-      </div> 
-
-     </div> 
 
     </div> 
  
