@@ -3,16 +3,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
 import { addDriver } from './store/slice/collectListSlice'
 
-
+import PersonalAccount from './components/personalAccount/personalAccount'
 import AuthPage from './components/authPage/authPage'
 import InputCreateList from './components/inputCreateList/inputCreateList'
 import Header from './components/header/header'
 import NotificationPage from './components/mainContent/notificationPage/notificationPage'
 import ContainerNameList from './components/mainContent/nameList/containerNameList'
-
+import RegistorPage from './components/registorPage/registorPage'
 
 import './App.scss'
-import RegistorPage from './components/registorPage/registorPage'
+
 
 
 
@@ -72,7 +72,7 @@ function App() {
 
           </Routes>
           
-          
+          <PersonalAccount/>
           
 
             
