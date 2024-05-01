@@ -69,10 +69,11 @@ function App() {
             <Route   path='/history'   element={<NotificationPage driverCollect={driverCollect}  /> } />  
              <Route path='/registration' element={<RegistorPage/>}/>
             <Route path='/' element={<ContainerNameList  driverCollect={driverCollect}  />}/>
+            <Route path='/personalAccount' element={<PersonalAccount/>}/>
 
           </Routes>
           
-          <PersonalAccount/>
+          
           
 
             
